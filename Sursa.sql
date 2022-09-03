@@ -895,7 +895,7 @@ create or replace trigger trig_ex10
 begin
     if to_char(sysdate,'D') not in (1,3,5) or to_char(sysdate,'HH24') not between 8 and 12 then
         raise_application_error(-20000,'Operatiile asupra tabelului INGREDIENT sunt permise doar'|| 
-            ' în zilele in care se face inventarul, între orele 8 si 12!');
+            ' Ã®n zilele in care se face inventarul, Ã®ntre orele 8 si 12!');
     end if;
 end;
 /
@@ -930,7 +930,7 @@ declare
 begin
     if inserting then
         if :new.cantitate not between 1 and 5 then
-            raise_application_error(-20000,'Cantitatea noului produs nu este între 1 si 5!');
+            raise_application_error(-20000,'Cantitatea noului produs nu este Ã®ntre 1 si 5!');
         else
             open c1(:new.id_produs);
             fetch c1 into v_este_praj;
